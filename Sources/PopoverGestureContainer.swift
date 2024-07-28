@@ -47,8 +47,6 @@ class PopoverGestureContainer: UIView {
         guard let window = window else { return }
 
         /// Create the SwiftUI view that contains all the popovers.
-        let popoverContainerView = PopoverContainerView(popoverModel: popoverModel)
-            .environment(\.window, window) /// Inject the window.
 
         host.rootView = AnyView(host.rootView.environment(\.window, window)) // Inject the window.
         host.view.frame = bounds
